@@ -1,29 +1,3 @@
-# Dépendances
-node_modules/
-.pnp/
-.pnp.js
-
-# Build
-dist/
-dist-ssr/
-*.local
-
-# Fichiers système
-.DS_Store
-Thumbs.db
-
-# Logs
-logs/
-*.log
-npm-debug.log*
-
-# Environnement
-.env
-.env.local
-.env.*.local
-
-# Éditeurs
-.vscode/
-.idea/
-*.swp
-*.swo
+"node_modules/" 
+".env" 
+"dist/" 
