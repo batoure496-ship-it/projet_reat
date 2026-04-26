@@ -10,7 +10,6 @@ function Hero() {
   const [roleIndex, setRoleIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   
-  // Effet de texte animé
   useEffect(() => {
     if (charIndex < roles[roleIndex].length) {
       const timeout = setTimeout(() => {
@@ -45,9 +44,8 @@ function Hero() {
   };
 
   const downloadResume = () => {
-    // Implémentez le téléchargement du CV ici
     const link = document.createElement('a');
-    link.href = '/resume.pdf'; // Chemin vers votre CV
+    link.href = '/resume.pdf';
     link.download = 'Mon_CV.pdf';
     link.click();
   };
@@ -91,17 +89,17 @@ function Hero() {
             <div className="stats-container">
               <div className="stat-item">
                 <div className="stat-number">UDO</div>
-                <div className="stat-label">licence en genie logiciel</div>
+                <div className="stat-label">Licence en génie logiciel</div>
               </div>
               <div className="stat-divider"></div>
               <div className="stat-item">
                 <div className="stat-number">3 ANS</div>
-                <div className="stat-label">D'etudes</div>
+                <div className="stat-label">D'études</div>
               </div>
               <div className="stat-divider"></div>
               <div className="stat-item">
                 <div className="stat-number">227</div>
-                <div className="stat-label">Universite Technologique de Dosso(Niger)</div>
+                <div className="stat-label">Université technologie de Dosso</div>
               </div>
             </div>
             
@@ -120,38 +118,16 @@ function Hero() {
             </div>
             
             <div className="social-links">
-              <a 
-                href="https://github.com/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="social-link github"
-                aria-label="GitHub"
-              >
+              <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="social-link github" aria-label="GitHub">
                 <FaGithub />
               </a>
-              <a 
-                href="https://linkedin.com/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="social-link linkedin"
-                aria-label="LinkedIn"
-              >
+              <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" className="social-link linkedin" aria-label="LinkedIn">
                 <FaLinkedin />
               </a>
-              <a 
-                href="https://twitter.com/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="social-link twitter"
-                aria-label="Twitter"
-              >
+              <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" className="social-link twitter" aria-label="Twitter">
                 <FaTwitter />
               </a>
-              <a 
-                href="batoure496@gmail.com"
-                className="social-link email"
-                aria-label="Email"
-              >
+              <a href="mailto:batoure496@gmail.com" className="social-link email" aria-label="Email">
                 <FaEnvelope />
               </a>
             </div>
@@ -160,7 +136,7 @@ function Hero() {
           <div className="hero-image">
             <div className="image-wrapper">
               <div className="image-border"></div>
-              <img src={heroImage} alt="John Doe - Développeur Full Stack" />
+              <img src={heroImage} alt="Développeur Full Stack" />
               <div className="image-overlay">
                 <div className="tech-stack">
                   <span>React</span>
@@ -188,6 +164,7 @@ function Hero() {
       </div>
 
       <style jsx>{`
+        /* ========== BASE ========== */
         .hero {
           position: relative;
           min-height: 100vh;
@@ -197,7 +174,7 @@ function Hero() {
           background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
         }
 
-        /* Arrière-plan animé */
+        /* ========== ARRIÈRE-PLAN ANIMÉ ========== */
         .hero-background {
           position: absolute;
           top: 0;
@@ -260,9 +237,11 @@ function Hero() {
           50% { transform: translateY(-20px) rotate(10deg); }
         }
 
+        /* ========== CONTAINER ========== */
         .hero-container {
           position: relative;
           z-index: 1;
+          width: 100%;
           max-width: 1400px;
           margin: 0 auto;
           padding: 6rem 2rem;
@@ -275,7 +254,7 @@ function Hero() {
           align-items: center;
         }
 
-        /* Texte */
+        /* ========== TEXTE ========== */
         .hero-text {
           animation: fadeInUp 0.8s ease-out;
         }
@@ -291,10 +270,6 @@ function Hero() {
           font-size: 0.9rem;
           color: #667eea;
           font-weight: 500;
-        }
-
-        .wave-emoji {
-          animation: wave 2s infinite;
         }
 
         @keyframes wave {
@@ -322,6 +297,7 @@ function Hero() {
           -webkit-text-fill-color: transparent;
           background-clip: text;
           animation: gradientShift 3s ease infinite;
+          display: inline-block;
         }
 
         @keyframes gradientShift {
@@ -366,7 +342,7 @@ function Hero() {
           max-width: 500px;
         }
 
-        /* Statistiques */
+        /* ========== STATISTIQUES ========== */
         .stats-container {
           display: flex;
           align-items: center;
@@ -376,10 +352,13 @@ function Hero() {
           background: rgba(255, 255, 255, 0.5);
           backdrop-filter: blur(10px);
           border-radius: 20px;
+          flex-wrap: wrap;
         }
 
         .stat-item {
           text-align: center;
+          flex: 1;
+          min-width: 80px;
         }
 
         .stat-number {
@@ -400,7 +379,7 @@ function Hero() {
           background: linear-gradient(to bottom, transparent, #ddd, transparent);
         }
 
-        /* Boutons */
+        /* ========== BOUTONS ========== */
         .hero-buttons {
           display: flex;
           gap: 1rem;
@@ -456,11 +435,12 @@ function Hero() {
           transform: translateY(-2px);
         }
 
-        /* Réseaux sociaux */
+        /* ========== RÉSEAUX SOCIAUX ========== */
         .social-links {
           display: flex;
           gap: 1rem;
           margin-top: 2rem;
+          flex-wrap: wrap;
         }
 
         .social-link {
@@ -486,7 +466,7 @@ function Hero() {
         .social-link.twitter:hover { background: #1da1f2; }
         .social-link.email:hover { background: #ea4335; }
 
-        /* Image */
+        /* ========== IMAGE ========== */
         .hero-image {
           position: relative;
           animation: fadeInRight 0.8s ease-out;
@@ -543,6 +523,7 @@ function Hero() {
           display: flex;
           gap: 0.5rem;
           justify-content: center;
+          flex-wrap: wrap;
         }
 
         .tech-stack span {
@@ -554,7 +535,7 @@ function Hero() {
           font-size: 0.8rem;
         }
 
-        /* Cartes flottantes */
+        /* ========== CARTES FLOTTANTES ========== */
         .floating-card {
           position: absolute;
           background: white;
@@ -594,7 +575,7 @@ function Hero() {
           color: #666;
         }
 
-        /* Animations */
+        /* ========== ANIMATIONS ========== */
         @keyframes fadeInUp {
           from {
             opacity: 0;
@@ -617,7 +598,11 @@ function Hero() {
           }
         }
 
-        /* Responsive */
+        /* ========================================== */
+        /* ========== RESPONSIVE DESIGN ========== */
+        /* ========================================== */
+
+        /* Tablettes (768px - 1024px) */
         @media (max-width: 1024px) {
           .hero-content {
             grid-template-columns: 1fr;
@@ -635,59 +620,149 @@ function Hero() {
           }
 
           .name-highlight {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
           }
 
           .typing-container {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
+          }
+
+          .hero-description {
+            max-width: 100%;
           }
         }
 
+        /* Mobiles (480px - 768px) */
         @media (max-width: 768px) {
           .hero-container {
-            padding: 4rem 1rem;
+            padding: 4rem 1.5rem;
           }
 
-          .hero-buttons {
-            flex-direction: column;
+          .greeting-badge {
+            font-size: 0.8rem;
+            padding: 0.4rem 0.8rem;
           }
 
-          .btn-primary, .btn-secondary, .btn-outline {
-            justify-content: center;
+          .greeting {
+            font-size: 1rem;
+          }
+
+          .name-highlight {
+            font-size: 2rem;
+          }
+
+          .typing-container {
+            font-size: 1.2rem;
+            min-height: 2.5rem;
+          }
+
+          .cursor {
+            height: 1.2rem;
+          }
+
+          .hero-description {
+            font-size: 0.95rem;
           }
 
           .stats-container {
-            gap: 1rem;
+            gap: 0.8rem;
+            padding: 0.8rem;
           }
 
           .stat-number {
             font-size: 1.3rem;
           }
 
+          .stat-label {
+            font-size: 0.7rem;
+          }
+
+          .hero-buttons {
+            flex-direction: column;
+            align-items: stretch;
+          }
+
+          .btn-primary, .btn-secondary, .btn-outline {
+            justify-content: center;
+            padding: 0.7rem 1.2rem;
+          }
+
+          .social-links {
+            justify-content: center;
+          }
+
+          .social-link {
+            width: 40px;
+            height: 40px;
+          }
+
           .floating-card {
             display: none;
+  /* Caché sur mobile pour ne pas surcharger */
           }
         }
 
+        /* Très petits mobiles (moins de 480px) */
         @media (max-width: 480px) {
+          .hero-container {
+            padding: 3rem 1rem;
+          }
+
+          .greeting-badge {
+            font-size: 0.7rem;
+            margin-bottom: 1rem;
+          }
+
           .greeting {
-            font-size: 1rem;
+            font-size: 0.9rem;
           }
 
           .name-highlight {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
           }
 
           .typing-container {
-            font-size: 1rem;
+            font-size: 0.9rem;
           }
 
           .hero-description {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+          }
+
+          .stats-container {
+            flex-direction: column;
+            gap: 0.5rem;
+          }
+
+          .stat-divider {
+            display: none;
+          }
+
+          .stat-item {
+            width: 100%;
+          }
+
+          .stat-number {
+            font-size: 1.2rem;
+          }
+
+          .btn-primary, .btn-secondary, .btn-outline {
+            font-size: 0.85rem;
+            padding: 0.6rem 1rem;
+          }
+
+          .social-link {
+            width: 35px;
+            height: 35px;
+          }
+
+          .tech-stack span {
+            font-size: 0.7rem;
+            padding: 0.2rem 0.6rem;
           }
         }
 
-        /* Accessibilité */
+        /* Réduction des animations pour les personnes sensibles */
         @media (prefers-reduced-motion: reduce) {
           * {
             animation-duration: 0.01ms !important;
